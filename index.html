@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Burok & Go - Street Food & Burger</title>
+    <link rel="icon" type="image/x-icon" href="favi.jpg">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">🍔 Burok & Go Street Food</div>
+        <div>
+            <button onclick="gorget('fooldal')">Főoldal</button>
+            <button onclick="gorget('etlap')">Étlap</button>
+            <button onclick="gorget('italok')">Italok</button>
+            <button onclick="gorget('rendeles')">Rendelés / Kosár (<span id="nav-kosar-db">0</span>)</button>
+            <button onclick="gorget('jatek')">Csináld magad burger</button>
+        </div>
+    </nav>
+
+    <div id="fooldal" class="oldal-szekcio">
+        <h1>Üdvözöljük a Burok & Go-ban!</h1>
+        <div class="kartya">
+            <h2>Kézműves Burgerek & Street Food</h2>
+            <marquee behavior="alternate" scrollamount="5">
+                <span style="font-size: 24px;">🍔 🍟 🥤 🌭 🍕</span>
+            </marquee>
+            <p>A város legzaftosabb burgerei, frissen sült krumpli és hűsítő üdítők egy helyen! Gyere el hozzánk, vagy rendeld házhoz a kedvenc ételeidet!</p>
+            <p><strong>Nyitvatartás:</strong> Hétfő - Péntek: 12:00 - 20:00 <br> Szombat - Vasárnap: 10:00 - 23:00</p>
+        </div>
+    </div>
+
+    <div id="etlap" class="oldal-szekcio">
+        <h1>Étel kínálatunk</h1>
+        <div class="etlap-racs">
+            <div class="etlap-kartya">
+                <img src="burger1.jpg" alt="Classic Burger" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Classic+Burger'">
+                <h3>1. Classic Burger</h3>
+                <p>Marhahús, cheddar, csemegeuborka, kézműves szósz.</p>
+                <div class="ar">2 490 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Classic Burger', 2490)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="burger2.jpg" alt="BBQ Bacon Burger" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=BBQ+Bacon'">
+                <h3>2. BBQ Bacon Burger</h3>
+                <p>Dupla bacon, pirított hagyma, füstös BBQ szósz.</p>
+                <div class="ar">2 890 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('BBQ Bacon Burger', 2890)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="burger3.jpg" alt="Cheesy Monster" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Cheesy+Monster'">
+                <h3>3. Cheesy Monster</h3>
+                <p>Tripla cheddar sajt, rántott sajtkorong, trappista.</p>
+                <div class="ar">3 190 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Cheesy Monster', 3190)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="burger4.jpg" alt="Spicy Jalapeno" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Spicy+Jalapeno'">
+                <h3>4. Spicy Jalapeño</h3>
+                <p>Chili szósz, jalapeño paprika, pikáns marhahús.</p>
+                <div class="ar">2 790 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Spicy Jalapeño', 2790)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="burger5.jpg" alt="Veggie Dream" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Veggie+Dream'">
+                <h3>5. Veggie Dream</h3>
+                <p>Grillezett camembert sajt, madársaláta, áfonya lekvár.</p>
+                <div class="ar">2 590 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Veggie Dream', 2590)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="burger 6.jpg" alt="Smoky BBQ Pulled Chicken Burger" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Smoky+Chicken'">
+                <h3>6. Smoky BBQ Chicken</h3>
+                <p>Füstös BBQ tépett csirkemell, cheddar, coleslaw.</p>
+                <div class="ar">2 690 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Smoky BBQ Pulled Chicken Burger', 2690)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="étel6.jpg" alt="Pulled Pork Szendvics" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Pulled+Pork'">
+                <h3>7. Pulled Pork Szendvics</h3>
+                <p>Lassan sült tépett sertéshús, coleslaw saláta.</p>
+                <div class="ar">2 990 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Pulled Pork Szendvics', 2990)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="étel7.jpg" alt="Crispy Chicken" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Crispy+Chicken'">
+                <h3>8. Crispy Chicken</h3>
+                <p>Ropogós csirkemell csíkok, majonéz, friss saláta.</p>
+                <div class="ar">2 390 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Crispy Chicken', 2390)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="étel8.jpg" alt="Steak Krumpli" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Steak+Krumpli'">
+                <h3>9. Steak Krumpli</h3>
+                <p>Fűszeres, héjában sült burgonyagerezdek.</p>
+                <div class="ar">990 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Steak Krumpli', 990)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="étel9.jpg" alt="Hagymakarika" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Hagymakarika'">
+                <h3>10. Hagymakarikák</h3>
+                <p>10 db ropogós hagymakarika mártogatóssal.</p>
+                <div class="ar">1 190 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Hagymakarikák', 1190)">🛒 Kosárba</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="italok" class="oldal-szekcio">
+        <h1>Ital kínálatunk</h1>
+        <div class="etlap-racs">
+            <div class="etlap-kartya">
+                <img src="inni1.jpg" alt="Házi Limonádé" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Limonade'">
+                <h3>1. Házi Limonádé</h3>
+                <p>0.5l friss citromos-mentás limonádé.</p>
+                <div class="ar">890 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Házi Limonádé', 890)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="inni2.jpg" alt="Házi Meggyes-Limonádé" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Meggyes+Limo'">
+                <h3>2. Meggyes-Limonádé</h3>
+                <p>0.5l friss citrom, valódi meggyvelő, menta.</p>
+                <div class="ar">990 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Házi Meggyes-Limonádé', 990)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="inni3.jpg" alt="Epres-Menta Jegestea" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Jegestea'">
+                <h3>3. Epres Jegestea</h3>
+                <p>0.5l fekete tea, édes epervelő, jég, menta.</p>
+                <div class="ar">1 190 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Epres-Menta Jegestea', 1190)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="inni4.jpg" alt="Mango-Maracuja Spritz" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Spritz'">
+                <h3>4. Mango Spritz</h3>
+                <p>0.5l mangó-maracuja püré, szóda, lime.</p>
+                <div class="ar">1 290 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Mango-Maracuja Spritz', 1290)">🛒 Kosárba</button>
+            </div>
+            <div class="etlap-kartya">
+                <img src="inni5.jpg" alt="Klasszikus Craft Cola" onerror="this.src='https://placehold.co/150x120/ff9f1c/000000?text=Craft+Cola'">
+                <h3>5. Craft Cola</h3>
+                <p>0.5l egyedi fűszerezésű kézműves kóla.</p>
+                <div class="ar">790 Ft</div>
+                <button class="gomb" onclick="kosarbaRak('Klasszikus Craft Cola', 790)">🛒 Kosárba</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="rendeles" class="oldal-szekcio">
+        <h1>Kosár és Rendelés</h1>
+        
+        <div class="kartya">
+            <h2>🛒 Kosár tartalma</h2>
+            <div class="kosar-doboz">
+                <ul id="kosar-lista" class="kosar-lista">
+                    <li><em>A kosár jelenleg üres. Válassz az étlapról vagy építs egy saját burger-t!</em></li>
+                </ul>
+                <div class="osszeg-sor">
+                    Összesen: <span id="kosar-osszeg">0</span> Ft
+                </div>
+            </div>
+            <button class="gomb" style="background-color: #d62828; color: #fff; width: auto;" onclick="kosarUrites()">🗑️ Kosár ürítése</button>
+        </div>
+
+        <div class="kartya">
+            <h2>Adja meg az adatait:</h2>
+            
+            <label>Név (csak betűk):</label>
+            <input type="text" id="nev" oninput="csakBetu(this)" placeholder="Hát Izsák">
+
+            <label>Telefonszám (csak számok, kötelezően 06-tal kezdődjön!):</label>
+            <input type="text" id="telefon" oninput="telefonszamFormat(this)" placeholder="06301234567">
+
+            <label>Város (csak betűk):</label>
+            <input type="text" id="varos" oninput="csakBetu(this)" placeholder="pl: Pizzaváros">
+
+            <label>Utca, házszám:</label>
+            <input type="text" id="cim" placeholder="pl: Kaja utca 12.">
+
+            <button class="gomb" onclick="rendelesElkuldese()">Rendelés Leadása</button>
+
+            <p style="margin-top: 15px;">
+                Keressen minket bizalommal: 
+                <a href="mailto:burokandgo@gmail.com" style="color: #ff9f1c;">burokandgo@gmail.com</a>
+            </p>
+        </div>
+
+        <div class="kartya">
+            <h2>Aktív rendelések:</h2>
+            <div id="rendelesek-lista">
+                <p>Még nincs leadott rendelés.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="jatek" class="oldal-szekcio">
+        <h1>Építsd meg a saját Burgeredet!</h1>
+        <p>Válassz hozzávalókat és rakd össze a saját kézműves burgeredet! <strong>Egységes ár: 1 490 Ft</strong></p>
+
+        <div class="kartya">
+            <div class="epito-doboz">
+                <button class="gomb" onclick="hozzaadReteget('Zsemle tető', '#d4a373')">➕ Zsemle tető</button>
+                <button class="gomb" onclick="hozzaadReteget('Sajt', '#ffb703')">➕ Cheddar sajt</button>
+                <button class="gomb" onclick="hozzaadReteget('Marhahús', '#582f0e')">➕ Marhahús pogácsa</button>
+                <button class="gomb" onclick="hozzaadReteget('Saláta & Paradicsom', '#52b788')">➕ Saláta & Paradicsom</button>
+                <button class="gomb" onclick="hozzaadReteget('Zsemle alj', '#d4a373')">➕ Zsemle alj</button>
+                <button class="gomb" style="background-color: #d62828; color: #fff;" onclick="burgerUjraindit()">🗑️ Törlés / Újraindítás</button>
+            </div>
+
+            <div class="burger-latszatisag" id="burger-doboz">
+                <p id="üres-szoveg">A burgered még üres. Kattints a gombokra!</p>
+            </div>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <div class="ar" style="font-size: 22px; margin-bottom: 10px;">Ár: 1 490 Ft</div>
+                <button class="gomb" style="font-size: 18px; padding: 12px 24px;" onclick="sajatBurgerKosarba()">🛒 Kosárba teszem a saját burgerem (1 490 Ft)</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sajat-modal" class="modal-hatter">
+        <div class="modal-tartalom">
+            <h3 id="modal-cím">Értesítés</h3>
+            <p id="modal-uzenet"></p>
+            <button class="gomb" style="width: auto; padding: 8px 25px;" onclick="modalBezar()">Rendben</button>
+        </div>
+    </div>
+
+    <button id="vissza-tetejere" onclick="gorget('fooldal')">⬆</button>
+
+    <footer>
+        <p>© 2026 Burok & Go Street Food | Kapcsolat: <a href="mailto:burokandgo@gmail.com">burokandgo@gmail.com</a></p>
+    </footer>
+
+    <script>
+
+        let kosar = [];
+        let burgerRetegek = [];
+
+        // Értesítő modal megjelenítése (alert helyett)
+        function uzenetMutat(szoveg, cim = "Burok & Go Értesítés") {
+            document.getElementById('modal-cím').innerText = cim;
+            document.getElementById('modal-uzenet').innerText = szoveg;
+            document.getElementById('sajat-modal').style.display = 'flex';
+        }
+
+        function modalBezar() {
+            document.getElementById('sajat-modal').style.display = 'none';
+        }
+
+        // Sima görgetés az adott fejezethez
+        function gorget(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Kosárba rakás funkció
+        function kosarbaRak(nev, ar) {
+            let letezik = kosar.find(elem => elem.nev === nev);
+            if (letezik) {
+                letezik.db += 1;
+            } else {
+                kosar.push({ nev: nev, ar: ar, db: 1 });
+            }
+            kosarFrissites();
+            uzenetMutat(`"${nev}" hozzáadva a kosárhoz!`);
+        }
+
+        // Kosár darabszámának módosítása
+        function kosarDbModosit(index, valtozas) {
+            kosar[index].db += valtozas;
+            if (kosar[index].db <= 0) {
+                kosar.splice(index, 1);
+            }
+            kosarFrissites();
+        }
+
+        // Kosár kiürítése
+        function kosarUrites() {
+            kosar = [];
+            kosarFrissites();
+        }
+
+        // Kosár UI frissítése
+        function kosarFrissites() {
+            let kosarLista = document.getElementById('kosar-lista');
+            let kosarOsszeg = document.getElementById('kosar-osszeg');
+            let navKosarDb = document.getElementById('nav-kosar-db');
+
+            let vegosszeg = 0;
+            let osszDb = 0;
+
+            if (kosar.length === 0) {
+                kosarLista.innerHTML = '<li><em>A kosár jelenleg üres. Válassz az étlapról vagy építs egy saját burger-t!</em></li>';
+                kosarOsszeg.innerText = '0';
+                navKosarDb.innerText = '0';
+                return;
+            }
+
+            kosarLista.innerHTML = '';
+            kosar.forEach((elem, index) => {
+                let reszosszeg = elem.ar * elem.db;
+                vegosszeg += reszosszeg;
+                osszDb += elem.db;
+
+                let li = document.createElement('li');
+                li.className = 'kosar-elem';
+                li.innerHTML = `
+                    <span><strong>${elem.nev}</strong> - ${elem.ar.toLocaleString('hu-HU')} Ft/db</span>
+                    <div class="kosar-gombok">
+                        <button class="kis-gomb" onclick="kosarDbModosit(${index}, -1)">-</button>
+                        <span>${elem.db} db</span>
+                        <button class="kis-gomb" onclick="kosarDbModosit(${index}, 1)">+</button>
+                        <span>(${reszosszeg.toLocaleString('hu-HU')} Ft)</span>
+                        <button class="torles-gomb" onclick="kosarDbModosit(${index}, -${elem.db})">❌</button>
+                    </div>
+                `;
+                kosarLista.appendChild(li);
+            });
+
+            kosarOsszeg.innerText = vegosszeg.toLocaleString('hu-HU');
+            navKosarDb.innerText = osszDb;
+        }
+
+        // Validáció: csak betűk
+        function csakBetu(input) {
+            input.value = input.value.replace(/[^a-zA-ZáéiíoóöőuúüűÁÉIÍOÓÖŐUÚÜŰ\s]/g, '');
+        }
+
+        // Validáció: Telefonszám formázás (csak számok engedélyezettek)
+        function telefonszamFormat(input) {
+            // Elküldünk minden nem-szám karaktert
+            input.value = input.value.replace(/[^0-9]/g, '');
+        }
+
+        // Rendelés elküldése
+        function rendelesElkuldese() {
+            let nev = document.getElementById('nev').value.trim();
+            let telefon = document.getElementById('telefon').value.trim();
+            let varos = document.getElementById('varos').value.trim();
+            let cim = document.getElementById('cim').value.trim();
+
+            if (kosar.length === 0) {
+                uzenetMutat("A kosarad üres! Kérjük, válassz valamit az étlapról rendelés előtt.");
+                return;
+            }
+
+            if (nev === "" || telefon === "" || varos === "" || cim === "") {
+                uzenetMutat("Kérjük, töltsön ki minden mezőt a megrendeléshez!");
+                return;
+            }
+
+            // Szigorú telefonszám ellenőrzés (06-tal KELL kezdődnie és legalább 9 karakter hosszú)
+            if (!telefon.startsWith('06')) {
+                uzenetMutat("A telefonszámnak '06'-tal kell kezdődnie! (pl. 06301234567)");
+                return;
+            }
+
+            if (telefon.length < 9 || telefon.length > 12) {
+                uzenetMutat("Kérjük, érvényes telefonszámot adjon meg! (pl. 06301234567)");
+                return;
+            }
+
+            let rendelesiRészletek = kosar.map(item => `${item.nev} (${item.db} db)`).join(', ');
+            let teljesOsszeg = document.getElementById('kosar-osszeg').innerText;
+
+            let lista = document.getElementById('rendelesek-lista');
+            if (lista.innerHTML.includes("Még nincs leadott rendelés.")) {
+                lista.innerHTML = "";
+            }
+
+            lista.innerHTML += `
+                <div style="border-bottom: 1px solid #ff9f1c; padding: 8px 0;">
+                    <p><strong>Rendelt tételek:</strong> ${rendelesiRészletek}</p>
+                    <p><strong>Összeg:</strong> ${teljesOsszeg} Ft</p>
+                    <p><strong>Megrendelő:</strong> ${nev} (${telefon}) | <strong>Cím:</strong> ${varos}, ${cim}</p>
+                </div>
+            `;
+
+            uzenetMutat("Rendelését sikeresen rögzítettük! Köszönjük a vásárlást!", "Sikeres Rendelés! 🎉");
+
+            // Kosár és űrlap ürítése
+            kosarUrites();
+            document.getElementById('nev').value = "";
+            document.getElementById('telefon').value = "";
+            document.getElementById('varos').value = "";
+            document.getElementById('cim').value = "";
+        }
+
+        // Burger Építő Játék Logika
+        function hozzaadReteget(nev, szin) {
+            let doboz = document.getElementById('burger-doboz');
+            let uresSzoveg = document.getElementById('üres-szoveg');
+            
+            if (uresSzoveg) {
+                uresSzoveg.remove();
+            }
+
+            burgerRetegek.unshift(nev);
+
+            let reteg = document.createElement('div');
+            reteg.className = 'reteg';
+            reteg.style.backgroundColor = szin;
+            reteg.innerText = nev;
+
+            // Betesszük a doboz tetejére
+            doboz.insertBefore(reteg, doboz.firstChild);
+        }
+
+        function burgerUjraindit() {
+            let doboz = document.getElementById('burger-doboz');
+            doboz.innerHTML = '<p id="üres-szoveg">A burgered még üres. Kattints a gombokra!</p>';
+            burgerRetegek = [];
+        }
+
+        // Saját összerakott burger kosárba tétele
+        function sajatBurgerKosarba() {
+            if (burgerRetegek.length === 0) {
+                uzenetMutat("A burgered még üres! Kattints a gombokra a hozzávalók hozzáadásához!");
+                return;
+            }
+
+            // A rétegeket alulról felfelé jelenítjük meg a névben a logikus leíráshoz
+            let osszetevok = [...burgerRetegek].reverse().join(', ');
+            let burgerNev = `Saját kézműves burger [${osszetevok}]`;
+
+            kosarbaRak(burgerNev, 1490);
+            gorget('rendeles');
+        }
+    </script>
+</body>
+</html>
