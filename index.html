@@ -352,13 +352,13 @@
                 return;
             }
 
-            // Szigorú telefonszám ellenőrzés (06-tal KELL kezdődnie és legalább 9 karakter hosszú)
+          
             if (!telefon.startsWith('06'))  {
                 uzenetMutat("A telefonszámnak '06'-tal kell kezdődnie! (pl. 06301234567)");
                 return;
             }
 
-            if (telefon.length > 11) {
+            if (telefon.length !== 11) {
                 uzenetMutat("Kérjük, érvényes telefonszámot adjon meg! (pl. 06301234567)");
                 return;
             }
