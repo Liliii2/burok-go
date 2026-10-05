@@ -27,7 +27,7 @@
             <marquee behavior="alternate" scrollamount="5">
                 <span style="font-size: 24px;">🍔 🍟 🥤 🌭 🍕</span>
             </marquee>
-            <p>A város legzaftosabb burgerei, frissen sült krumpli és hűsítő üdítők egy helyen! Gyere el hozzánk, vagy rendeld házhoz a kedvenc ételeidet!</p>
+            <p>A város legszaftosabb burgerei, frissen sült krumpli és hűsítő üdítők egy helyen! Gyere el hozzánk, vagy rendeld házhoz a kedvenc ételeidet!</p>
             <p><strong>Nyitvatartás:</strong> Hétfő - Péntek: 12:00 - 20:00 <br> Szombat - Vasárnap: 10:00 - 23:00</p>
         </div>
     </div>
@@ -353,12 +353,12 @@
             }
 
             // Szigorú telefonszám ellenőrzés (06-tal KELL kezdődnie és legalább 9 karakter hosszú)
-            if (!telefon.startsWith('06')) {
+            if (!telefon.startsWith('06'))  {
                 uzenetMutat("A telefonszámnak '06'-tal kell kezdődnie! (pl. 06301234567)");
                 return;
             }
 
-            if (telefon.length < 9 || telefon.length > 12) {
+            if (telefon.length > 11) {
                 uzenetMutat("Kérjük, érvényes telefonszámot adjon meg! (pl. 06301234567)");
                 return;
             }
